@@ -6,7 +6,11 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 
+import { useState } from "react";
+
 export function StoryGenerator() {
+    // State variables
+    const [notes, setNotes] = useState("");
   return (
     <div className="max-w-4xl mx-auto px-6 space-y-8">
       {/* Input Section */}
@@ -19,6 +23,8 @@ export function StoryGenerator() {
         </CardHeader>
         <CardContent className="space-y-4">
           <Textarea
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
             placeholder="Paste or write your notes here... anything from study notes, meeting minutes, research findings, or random thoughts. The more detailed, the richer your story will be!"
             className="min-h-[200px] resize-none text-base leading-relaxed bg-background/50 border-border/50 focus:border-primary transition-colors"
           />
