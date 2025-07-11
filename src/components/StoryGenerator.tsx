@@ -1,3 +1,5 @@
+'use client';
+
 import { Wand2 } from "lucide-react";
 
 import { Textarea } from "./ui/textarea";
