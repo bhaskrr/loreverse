@@ -1,6 +1,6 @@
 'use client';
 
-import { Wand2 } from "lucide-react";
+import { Loader2, Wand2 } from "lucide-react";
 
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
@@ -11,6 +11,7 @@ import { useState } from "react";
 export function StoryGenerator() {
     // State variables
     const [notes, setNotes] = useState("");
+    const [isGenerating, setIsgenerating] = useState(false);
   return (
     <div className="max-w-4xl mx-auto px-6 space-y-8">
       {/* Input Section */}
@@ -30,8 +31,17 @@ export function StoryGenerator() {
           />
 
           <Button className="w-full sm:w-auto bg-orange-400 font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200">
-            <Wand2 className="h-5 w-5 mr-2" />
-            Generate Story
+            {isGenerating ? (
+              <>
+                <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                Crafting your story...
+              </>
+            ) : (
+              <>
+                <Wand2 className="h-5 w-5 mr-2" />
+                Generate Story
+              </>
+            )}
           </Button>
         </CardContent>
       </Card>
