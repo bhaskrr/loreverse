@@ -105,7 +105,7 @@ export function StoryGenerator() {
           </div>
 
           <Button
-            className="w-full sm:w-auto bg-orange-400 font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200"
+            className="w-full sm:w-auto bg-orange-400 font-semibold py-5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200"
             onClick={generateStory}
             disabled={isGenerating}
           >
