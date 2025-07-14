@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from "./ui/label";
+import { toast } from "sonner";
 import { useState } from "react";
 
 export function StoryGenerator() {
@@ -42,6 +43,13 @@ export function StoryGenerator() {
 
   const copyStory = () => {
     navigator.clipboard.writeText(story);
+    toast("Copied to clipboard!", {
+      action: {
+      label: "x",
+      onClick: () => console.log("Undo"),
+      },
+    }
+  );
   };
 
   return (
