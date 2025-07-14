@@ -1,6 +1,6 @@
 'use client';
 
-import { Feather, Loader2, Settings2, Wand2 } from "lucide-react";
+import { Copy, Feather, Loader2, Settings2, Wand2 } from "lucide-react";
 
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
@@ -38,6 +38,10 @@ export function StoryGenerator() {
     const data = await res.json();
     setStory(data.story);
     setIsGenerating(false);
+  };
+
+  const copyStory = () => {
+    navigator.clipboard.writeText(story);
   };
 
   return (
@@ -132,6 +136,17 @@ export function StoryGenerator() {
                 <Feather className="h-5 w-5 text-primary" />
                 Your Story
               </CardTitle>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={copyStory}
+                  className="hover:bg-accent hover:text-accent-foreground transition-colors"
+                >
+                  <Copy className="h-4 w-4 mr-1" />
+                  Copy
+                </Button>
+                </div>
             </div>
           </CardHeader>
 
