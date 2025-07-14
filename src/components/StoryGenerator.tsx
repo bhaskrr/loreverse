@@ -26,7 +26,13 @@ export function StoryGenerator() {
     const res = await fetch("/api/generate-story", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ notes: notes }),
+      body: JSON.stringify(
+        {
+          notes: notes,
+          tone: tone,
+          length: length,
+        }
+      ),
     });
 
     const data = await res.json();
