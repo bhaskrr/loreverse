@@ -168,7 +168,7 @@ export function StoryGenerator() {
                   variant="outline"
                   size="sm"
                   onClick={copyStory}
-                  className="hover:bg-accent hover:text-accent-foreground transition-colors"
+                  className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
                   <Copy className="h-4 w-4 mr-1" />
                   Copy
