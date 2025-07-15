@@ -1,6 +1,6 @@
 'use client';
 
-import { Copy, Feather, Loader2, Settings2, Wand2 } from "lucide-react";
+import { Copy, Feather, Loader2, RefreshCw, Settings2, Wand2 } from "lucide-react";
 
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
@@ -145,6 +145,25 @@ export function StoryGenerator() {
                 Your Story
               </CardTitle>
               <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={generateStory}
+                  className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors"
+                >
+                  {isGenerating ? (
+                    <>
+                      <RefreshCw className="h-4 w-4 mr-1 animate-spin" />
+                      Regenerating
+                    </>
+                  ) : (
+                    <>
+                      <RefreshCw className="h-4 w-4 mr-1" />
+                      Regenerate
+                    </>
+                  )}
+                  
+                </Button>
                 <Button
                   variant="outline"
                   size="sm"
