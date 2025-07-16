@@ -18,6 +18,7 @@ export function StoryGenerator() {
     const [length, setLength] = useState("medium");
     const [isGenerating, setIsGenerating] = useState(false);
     const [isRegenerating, setIsRegenerating] = useState(false);
+    const [notesError, setNotesError] = useState("");
 
     const handleInputChange = (e) => {
       const input = e.target.value;
@@ -26,10 +27,12 @@ export function StoryGenerator() {
 
   const generateStory = async () => {
     if (!notes.trim()) {
-      return;
+      setNotesError("Notes can not be empty!");
     }
+
     setIsGenerating(true);
 
+    try {
     const res = await fetch("/api/generate-story", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -45,6 +48,11 @@ export function StoryGenerator() {
     const data = await res.json();
     setStory(data.story);
     setIsGenerating(false);
+    }
+    catch (err){
+      setNotesError(err.message);
+      setIsGenerating(false);
+    }
   };
 
   const regenerateStory = async () => {
@@ -98,6 +106,19 @@ export function StoryGenerator() {
             placeholder="Paste or write your notes here... anything from study notes, meeting minutes, research findings, or random thoughts. The more detailed, the richer your story will be!"
             className="min-h-[200px] resize-none text-base leading-relaxed bg-background/50 border-border/50 focus:border-primary transition-colors"
           />
+          {/* Display Errors */}
+          {notesError ? (
+            <div className="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+              <svg className="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+              </svg>
+              <span className="sr-only">Info</span>
+              <div>
+                <span className="font-medium">{notesError}</span>
+              </div>
+            </div>
+          )
+          : ""}
 
           {/* Story Settings Section */}
           <div className="relative bg-white/80 border border-primary/30 shadow-lg rounded-xl p-6 mt-2 mb-4 transition-all">
