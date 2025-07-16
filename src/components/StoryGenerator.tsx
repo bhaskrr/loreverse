@@ -17,6 +17,7 @@ export function StoryGenerator() {
     const [tone, setTone] = useState("engaging");
     const [length, setLength] = useState("medium");
     const [isGenerating, setIsGenerating] = useState(false);
+    const [isRegenerating, setIsRegenerating] = useState(false);
 
     const handleInputChange = (e) => {
       const input = e.target.value;
@@ -45,6 +46,29 @@ export function StoryGenerator() {
     setStory(data.story);
     setIsGenerating(false);
   };
+
+  const regenerateStory = async () => {
+    if (!notes.trim()) {
+      return;
+    }
+    setIsRegenerating(true);
+
+    const res = await fetch("/api/generate-story", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(
+        {
+          notes: notes,
+          tone: tone,
+          length: length,
+        }
+      ),
+    });
+
+    const data = await res.json();
+    setStory(data.story);
+    setIsRegenerating(false);
+  }
 
   const copyStory = () => {
     navigator.clipboard.writeText(story);
@@ -153,10 +177,10 @@ export function StoryGenerator() {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={generateStory}
+                  onClick={regenerateStory}
                   className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
-                  {isGenerating ? (
+                  {isRegenerating ? (
                     <>
                       <RefreshCw className="h-4 w-4 mr-1 animate-spin" />
                       Regenerating
