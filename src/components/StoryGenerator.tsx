@@ -61,6 +61,8 @@ export function StoryGenerator() {
     }
     setIsRegenerating(true);
 
+    try {
+
     const res = await fetch("/api/generate-story", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -76,7 +78,11 @@ export function StoryGenerator() {
     const data = await res.json();
     setStory(data.story);
     setIsRegenerating(false);
-  }
+    }
+    catch(err){
+      setNotesError(err.message);
+    }
+  };
 
   const copyStory = () => {
     navigator.clipboard.writeText(story);
