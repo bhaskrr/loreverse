@@ -18,6 +18,11 @@ export function StoryGenerator() {
     const [length, setLength] = useState("medium");
     const [isGenerating, setIsGenerating] = useState(false);
 
+    const handleInputChange = (e) => {
+      const input = e.target.value;
+      setNotes(input);
+    }
+
   const generateStory = async () => {
     if (!notes.trim()) {
       return;
@@ -65,7 +70,7 @@ export function StoryGenerator() {
         <CardContent className="space-y-4">
           <Textarea
             value={notes}
-            onChange={(e) => setNotes(e.target.value)}
+            onChange={handleInputChange}
             placeholder="Paste or write your notes here... anything from study notes, meeting minutes, research findings, or random thoughts. The more detailed, the richer your story will be!"
             className="min-h-[200px] resize-none text-base leading-relaxed bg-background/50 border-border/50 focus:border-primary transition-colors"
           />
