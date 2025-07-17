@@ -2,7 +2,7 @@ import { Feather } from 'lucide-react';
 
 export const HeroSection = () => {
   return (
-    <section className="text-center py-12 px-6">
+    <section className="text-center py-10 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-center mb-4">
           <Feather className="h-8 w-8 text-orange-400" />
