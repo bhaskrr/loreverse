@@ -4,7 +4,7 @@ import { Copy, Feather, Loader2, RefreshCw, Settings2, Wand2 } from "lucide-reac
 
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
+import { Card, CardAction, CardDescription, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from "./ui/label";
 import { toast } from "sonner";
@@ -200,12 +200,17 @@ export function StoryGenerator() {
       {story && (
         <Card className="story-gradient border-border/50 shadow-lg animate-fade-in">
           <CardHeader>
-            <div className="flex items-center justify-between">
-              <CardTitle className="flex items-center gap-2 text-foreground">
-                <Feather className="h-5 w-5 text-primary" />
-                Your Story
+              <CardTitle>
+                <div className="flex gap-2">
+                  <Feather className="h-5 w-5 text-primary" />
+                  Your Story
+                </div>
               </CardTitle>
-              <div className="flex gap-2">
+              <CardDescription className="text-black">
+                View and edit your story below
+              </CardDescription>
+
+              <CardAction>
                 <Button
                   variant="outline"
                   size="sm"
@@ -234,8 +239,7 @@ export function StoryGenerator() {
                   <Copy className="h-4 w-4 mr-1" />
                   Copy
                 </Button>
-                </div>
-            </div>
+                </CardAction>
           </CardHeader>
 
           <CardContent>
