@@ -84,6 +84,11 @@ export function StoryGenerator() {
     }
   };
 
+  const handleStoryEdit = (e) => {
+    const editedStory = e.target.value;
+    setStory(editedStory);
+  }
+
   const copyStory = () => {
     navigator.clipboard.writeText(story);
     toast("Copied to clipboard!", {
@@ -236,7 +241,11 @@ export function StoryGenerator() {
           <CardContent>
             <div className="prose prose-lg max-w-none text-foreground">
               <div className="bg-background/30 rounded-lg p-4 leading-relaxed text-base whitespace-pre-line">
-                {story}
+                <Textarea
+                  value={story}
+                  onChange={handleStoryEdit}
+                  className="min-h-[400px] max-h-500px text-base leading-relaxed bg-background/50 border-black focus:border-primary transition-colors"
+                />
               </div>
             </div>
           </CardContent>
