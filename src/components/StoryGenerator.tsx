@@ -57,7 +57,7 @@ export function StoryGenerator() {
 
   const regenerateStory = async () => {
     if (!notes.trim()) {
-      return;
+      setNotesError("Notes can not be empty!");
     }
     setIsRegenerating(true);
 
