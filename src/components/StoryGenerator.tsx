@@ -19,15 +19,27 @@ export function StoryGenerator() {
     const [isGenerating, setIsGenerating] = useState(false);
     const [isRegenerating, setIsRegenerating] = useState(false);
     const [notesError, setNotesError] = useState("");
+    const [disabled, setDisabled] = useState(true);
 
     const handleInputChange = (e) => {
       const input = e.target.value;
+
       setNotes(input);
+
+      if (!input.trim()){
+        setNotesError("Notes can not be empty!");
+        setDisabled(true);
+      }
+      else{
+        setNotesError("");
+        setDisabled(false);
+      }
     }
 
   const generateStory = async () => {
     if (!notes.trim()) {
       setNotesError("Notes can not be empty!");
+      setDisabled(true);
       return;
     }
     else {
@@ -62,6 +74,7 @@ export function StoryGenerator() {
   const regenerateStory = async () => {
     if (!notes.trim()) {
       setNotesError("Notes can not be empty!");
+      setDisabled(true);
       return;
     }
     else {
@@ -189,7 +202,7 @@ export function StoryGenerator() {
           <Button
             className="w-full sm:w-auto bg-orange-400 font-semibold py-5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200"
             onClick={generateStory}
-            disabled={isGenerating}
+            disabled={disabled || isGenerating}
           >
             {isGenerating ? (
               <>
