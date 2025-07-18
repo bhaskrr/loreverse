@@ -237,6 +237,7 @@ export function StoryGenerator() {
                   variant="outline"
                   size="sm"
                   onClick={regenerateStory}
+                  disabled={disabled}
                   className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
                   {isRegenerating ? (
