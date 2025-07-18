@@ -158,12 +158,14 @@ export function StoryGenerator() {
           <div className="relative bg-white/80 border border-primary/30 shadow-lg rounded-xl p-6 mt-2 mb-4 transition-all">
             {/* <div className="absolute -left-3 top-6 h-10 w-1 bg-gradient-to-b from-orange-400 to-primary rounded-full" /> */}
             <div className="flex items-center gap-3 mb-2">
-              <Settings2 className="h-5 w-5" />
-              <span className="font-bold drop-shadow">Story Settings</span>
-            </div>
-            <p className="text-sm text-foreground mb-4">
-              Customize your story for the perfect fit.
-            </p>
+              <div className="bg-orange-400 p-3 rounded-lg shadow-lg">
+                <Settings2 className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">Story Customization</h3>
+                <p className="text-sm font-normal">Tailor your story to perfection</p>
+              </div>
+              </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="tone-select" className="text-sm font-semibold text-foreground">
