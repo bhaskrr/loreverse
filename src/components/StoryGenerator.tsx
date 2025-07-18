@@ -170,7 +170,7 @@ export function StoryGenerator() {
                   Story Tone
                 </Label>
                 <Select value={tone} onValueChange={setTone}>
-                  <SelectTrigger id="tone-select" className="bg-gray-100 border-primary/40 text-foreground shadow-sm focus:ring-2 focus:ring-primary">
+                  <SelectTrigger id="tone-select" className="w-full bg-gray-100 border-primary/40 text-foreground shadow-sm focus:ring-2 focus:ring-primary">
                     <SelectValue placeholder="Select tone" />
                   </SelectTrigger>
                   <SelectContent>
@@ -187,7 +187,7 @@ export function StoryGenerator() {
                   Story Length
                 </Label>
                 <Select value={length} onValueChange={setLength}>
-                  <SelectTrigger id="length-select" className="bg-gray-100 border-primary/40 text-foreground shadow-sm focus:ring-2 focus:ring-primary">
+                  <SelectTrigger id="length-select" className="w-full bg-gray-100 border-primary/40 text-foreground shadow-sm focus:ring-2 focus:ring-primary">
                     <SelectValue placeholder="Select length" />
                   </SelectTrigger>
                   <SelectContent>
@@ -202,7 +202,7 @@ export function StoryGenerator() {
                   Time Period
                 </Label>
                 <Select value={timePeriod} onValueChange={setTimePeriod}>
-                  <SelectTrigger id="time-period-select" className="bg-gray-100 border-primary/40 text-foreground shadow-sm focus:ring-2 focus:ring-primary">
+                  <SelectTrigger id="time-period-select" className="w-full bg-gray-100 border-primary/40 text-foreground shadow-sm focus:ring-2 focus:ring-primary">
                     <SelectValue placeholder="Select time period" />
                   </SelectTrigger>
                   <SelectContent>
