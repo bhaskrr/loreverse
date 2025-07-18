@@ -16,6 +16,7 @@ export function StoryGenerator() {
     const [story, setStory] = useState("");
     const [tone, setTone] = useState("engaging");
     const [length, setLength] = useState("medium");
+    const [timePeriod, setTimePeriod] = useState("modern-day");
     const [isGenerating, setIsGenerating] = useState(false);
     const [isRegenerating, setIsRegenerating] = useState(false);
     const [notesError, setNotesError] = useState("");
@@ -193,6 +194,22 @@ export function StoryGenerator() {
                     <SelectItem value="short">Short & Concise</SelectItem>
                     <SelectItem value="medium">Medium Length</SelectItem>
                     <SelectItem value="long">Detailed & Comprehensive</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="time-period-select" className="text-sm font-semibold text-foreground">
+                  Time Period
+                </Label>
+                <Select value={timePeriod} onValueChange={setTimePeriod}>
+                  <SelectTrigger id="time-period-select" className="bg-gray-100 border-primary/40 text-foreground shadow-sm focus:ring-2 focus:ring-primary">
+                    <SelectValue placeholder="Select time period" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="futuristic">Futuristic</SelectItem>
+                    <SelectItem value="modern-day">Modern Day</SelectItem>
+                    <SelectItem value="medieval-times">Medieval Time</SelectItem>
+                    <SelectItem value="mythological">Mythological</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
