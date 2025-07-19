@@ -17,6 +17,7 @@ export function StoryGenerator() {
     const [tone, setTone] = useState("engaging");
     const [length, setLength] = useState("medium");
     const [timePeriod, setTimePeriod] = useState("modern-day");
+    const [intention, setIntention] = useState('knowledge');
     const [isGenerating, setIsGenerating] = useState(false);
     const [isRegenerating, setIsRegenerating] = useState(false);
     const [notesError, setNotesError] = useState("");
@@ -169,6 +170,24 @@ export function StoryGenerator() {
               </div>
               </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="focus-select" className="text-sm font-semibold text-foreground">
+                  Learning Focus
+                </Label>
+                <Select value={intention} onValueChange={setIntention}>
+                  <SelectTrigger id="focus-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
+                    <SelectValue placeholder="Select learning focus" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="knowledge">Knowledge Retention</SelectItem>
+                    <SelectItem value="understanding">Deep Understanding</SelectItem>
+                    <SelectItem value="application">Practical Application</SelectItem>
+                    <SelectItem value="creativity">Creative Thinking</SelectItem>
+                    <SelectItem value="memory">Memory Enhancement</SelectItem>
+                    <SelectItem value="inspiration">Inspiration & Motivation</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="tone-select" className="text-sm font-semibold text-foreground">
                   Story Tone
