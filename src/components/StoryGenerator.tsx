@@ -58,6 +58,7 @@ export function StoryGenerator() {
           notes: notes,
           tone: tone,
           length: length,
+          setting: timePeriod,
         }
       ),
     });
@@ -94,6 +95,7 @@ export function StoryGenerator() {
           notes: notes,
           tone: tone,
           length: length,
+          setting: timePeriod,
         }
       ),
     });
