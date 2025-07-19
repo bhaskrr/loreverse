@@ -60,6 +60,7 @@ export function StoryGenerator() {
           tone: tone,
           length: length,
           setting: timePeriod,
+          goal: intention,
         }
       ),
     });
@@ -97,6 +98,7 @@ export function StoryGenerator() {
           tone: tone,
           length: length,
           setting: timePeriod,
+          goal: intention,
         }
       ),
     });
