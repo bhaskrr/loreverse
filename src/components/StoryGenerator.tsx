@@ -18,6 +18,7 @@ export function StoryGenerator() {
     const [length, setLength] = useState("medium");
     const [timePeriod, setTimePeriod] = useState("modern-day");
     const [intention, setIntention] = useState('knowledge');
+    const [theme, setTheme] = useState("personal-growth");
     const [isGenerating, setIsGenerating] = useState(false);
     const [isRegenerating, setIsRegenerating] = useState(false);
     const [notesError, setNotesError] = useState("");
@@ -241,6 +242,26 @@ export function StoryGenerator() {
                     <SelectItem value="modern-day">Modern Day</SelectItem>
                     <SelectItem value="medieval-times">Medieval Time</SelectItem>
                     <SelectItem value="mythological">Mythological</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="theme-select" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  Theme
+                </Label>
+                <Select value={theme} onValueChange={setTheme}>
+                  <SelectTrigger id="theme-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent className="bg-popover border border-border shadow-lg">
+                    <SelectItem value="personal-growth">Personal Growth</SelectItem>
+                    <SelectItem value="overcoming-challenges">Overcoming Challenges</SelectItem>
+                    <SelectItem value="discovery">Discovery & Learning</SelectItem>
+                    <SelectItem value="transformation">Transformation</SelectItem>
+                    <SelectItem value="collaboration">Teamwork & Collaboration</SelectItem>
+                    <SelectItem value="innovation">Innovation & Creativity</SelectItem>
+                    <SelectItem value="wisdom">Wisdom & Knowledge</SelectItem>
+                    <SelectItem value="resilience">Resilience & Perseverance</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
