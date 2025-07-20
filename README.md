@@ -1,3 +1,5 @@
+![](./media/loreverse-banner.png)
+
 # LoreVerse 🧙‍♂️📚
 
 Turn your study notes into short, memorable stories with AI.
