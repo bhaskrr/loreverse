@@ -19,6 +19,7 @@ export function StoryGenerator() {
     const [timePeriod, setTimePeriod] = useState("modern-day");
     const [intention, setIntention] = useState('knowledge');
     const [theme, setTheme] = useState("personal-growth");
+    const [genre, setGenre] = useState("inspirational");
     const [isGenerating, setIsGenerating] = useState(false);
     const [isRegenerating, setIsRegenerating] = useState(false);
     const [notesError, setNotesError] = useState("");
@@ -262,6 +263,27 @@ export function StoryGenerator() {
                     <SelectItem value="innovation">Innovation & Creativity</SelectItem>
                     <SelectItem value="wisdom">Wisdom & Knowledge</SelectItem>
                     <SelectItem value="resilience">Resilience & Perseverance</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="genre-select" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  Genre
+                </Label>
+                <Select value={genre} onValueChange={setGenre}>
+                  <SelectTrigger id="genre-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent className="bg-popover border border-border shadow-lg">
+                    <SelectItem value="inspirational">Inspirational</SelectItem>
+                    <SelectItem value="educational">Educational</SelectItem>
+                    <SelectItem value="motivational">Motivational</SelectItem>
+                    <SelectItem value="adventure">Adventure</SelectItem>
+                    <SelectItem value="mystery">Mystery</SelectItem>
+                    <SelectItem value="sci-fi">Science Fiction</SelectItem>
+                    <SelectItem value="fantasy">Fantasy</SelectItem>
+                    <SelectItem value="biographical">Biographical</SelectItem>
+                    <SelectItem value="parable">Parable/Fable</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
