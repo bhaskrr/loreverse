@@ -64,6 +64,7 @@ export function StoryGenerator() {
           setting: timePeriod,
           goal: intention,
           theme: theme,
+          genre: genre,
         }
       ),
     });
@@ -103,6 +104,7 @@ export function StoryGenerator() {
           setting: timePeriod,
           goal: intention,
           theme: theme,
+          genre: genre,
         }
       ),
     });
