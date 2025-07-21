@@ -63,6 +63,7 @@ export function StoryGenerator() {
           length: length,
           setting: timePeriod,
           goal: intention,
+          theme: theme,
         }
       ),
     });
@@ -101,6 +102,7 @@ export function StoryGenerator() {
           length: length,
           setting: timePeriod,
           goal: intention,
+          theme: theme,
         }
       ),
     });
