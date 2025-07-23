@@ -202,7 +202,7 @@ export function StoryGenerator() {
                   <span>Customize</span>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent>
+              <PopoverContent className="bg-white">
                 <div className="relative bg-white/80 border border-primary/30 shadow-lg rounded-xl p-6 mt-2 mb-4 transition-all">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="bg-orange-500 p-3 rounded-lg shadow-lg">
