@@ -175,7 +175,7 @@ export function StoryGenerator() {
           {/* Story Settings Section */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center bg-white/60 rounded-xl p-3 mt-2 mb-4 shadow-inner border border-primary/10">
             <Button
-              className="w-full sm:w-auto bg-orange-400 font-semibold py-5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200"
+              className="w-full sm:w-auto bg-orange-500 font-semibold py-5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200"
               onClick={generateStory}
               disabled={disabled || isGenerating || isRegenerating}
             >
