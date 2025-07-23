@@ -199,6 +199,7 @@ export function StoryGenerator() {
                   variant="outline"
                 >
                   <Settings2 />
+                  <span>Customize</span>
                 </Button>
               </PopoverTrigger>
               <PopoverContent>
