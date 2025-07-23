@@ -342,36 +342,38 @@ export function StoryGenerator() {
               </CardDescription>
 
               <CardAction>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={regenerateStory}
-                  disabled={disabled}
-                  className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors"
-                >
-                  {isRegenerating ? (
-                    <>
-                      <RefreshCw className="h-4 w-4 mr-1 animate-spin" />
-                      Regenerating
-                    </>
-                  ) : (
-                    <>
-                      <RefreshCw className="h-4 w-4 mr-1" />
-                      Regenerate
-                    </>
-                  )}
-                  
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={copyStory}
-                  className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors"
-                >
-                  <Copy className="h-4 w-4 mr-1" />
-                  Copy
-                </Button>
-                </CardAction>
+                <div className="flex flex-col sm:flex-row sm:justify-end gap-2 w-full">
+                  <Button
+                    variant="default"
+                    size="sm"
+                    onClick={regenerateStory}
+                    disabled={disabled || isRegenerating}
+                    className="flex items-center gap-1 bg-orange-500 hover:bg-orange-600 text-white transition-colors"
+                  >
+                    {isRegenerating ? (
+                      <>
+                        <RefreshCw className="h-4 w-4 animate-spin" />
+                        Regenerating
+                      </>
+                    ) : (
+                      <>
+                        <RefreshCw className="h-4 w-4" />
+                        Regenerate Story
+                      </>
+                    )}
+                    
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={copyStory}
+                    className="flex items-center gap-1"
+                  >
+                    <Copy className="h-4 w-4" />
+                    Copy Story
+                  </Button>
+                </div>
+              </CardAction>
           </CardHeader>
 
           <CardContent>
