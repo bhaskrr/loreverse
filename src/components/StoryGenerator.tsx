@@ -5,6 +5,7 @@ import { Copy, Feather, Loader2, RefreshCw, Settings2, Wand2 } from "lucide-reac
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { Card, CardAction, CardDescription, CardHeader, CardTitle, CardContent } from "./ui/card";
+import { Popover, PopoverTrigger, PopoverContent } from "@radix-ui/react-popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from "./ui/label";
 import { toast } from "sonner";
@@ -172,145 +173,158 @@ export function StoryGenerator() {
           : ""}
 
           {/* Story Settings Section */}
-          <div className="relative bg-white/80 border border-primary/30 shadow-lg rounded-xl p-6 mt-2 mb-4 transition-all">
-            {/* <div className="absolute -left-3 top-6 h-10 w-1 bg-gradient-to-b from-orange-400 to-primary rounded-full" /> */}
-            <div className="flex items-center gap-3 mb-2">
-              <div className="bg-orange-400 p-3 rounded-lg shadow-lg">
-                <Settings2 className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Story Customization</h3>
-                <p className="text-sm font-normal">Tailor your story to perfection</p>
-              </div>
-              </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="focus-select" className="text-sm font-semibold text-foreground">
-                  Learning Focus
-                </Label>
-                <Select value={intention} onValueChange={setIntention}>
-                  <SelectTrigger id="focus-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
-                    <SelectValue placeholder="Select learning focus" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="knowledge">Knowledge Retention</SelectItem>
-                    <SelectItem value="understanding">Deep Understanding</SelectItem>
-                    <SelectItem value="application">Practical Application</SelectItem>
-                    <SelectItem value="creativity">Creative Thinking</SelectItem>
-                    <SelectItem value="memory">Memory Enhancement</SelectItem>
-                    <SelectItem value="inspiration">Inspiration & Motivation</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="tone-select" className="text-sm font-semibold text-foreground">
-                  Story Tone
-                </Label>
-                <Select value={tone} onValueChange={setTone}>
-                  <SelectTrigger id="tone-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
-                    <SelectValue placeholder="Select tone" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="engaging">Engaging & Memorable</SelectItem>
-                    <SelectItem value="professional">Professional</SelectItem>
-                    <SelectItem value="creative">Creative & Imaginative</SelectItem>
-                    <SelectItem value="academic">Academic & Formal</SelectItem>
-                    <SelectItem value="casual">Casual & Friendly</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="length-select" className="text-sm font-semibold text-foreground">
-                  Story Length
-                </Label>
-                <Select value={length} onValueChange={setLength}>
-                  <SelectTrigger id="length-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
-                    <SelectValue placeholder="Select length" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="short">Short & Concise</SelectItem>
-                    <SelectItem value="medium">Medium Length</SelectItem>
-                    <SelectItem value="long">Detailed & Comprehensive</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="time-period-select" className="text-sm font-semibold text-foreground">
-                  Time Period
-                </Label>
-                <Select value={timePeriod} onValueChange={setTimePeriod}>
-                  <SelectTrigger id="time-period-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
-                    <SelectValue placeholder="Select time period" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="futuristic">Futuristic</SelectItem>
-                    <SelectItem value="modern-day">Modern Day</SelectItem>
-                    <SelectItem value="medieval-times">Medieval Time</SelectItem>
-                    <SelectItem value="mythological">Mythological</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="theme-select" className="text-sm font-medium text-foreground flex items-center gap-2">
-                  Theme
-                </Label>
-                <Select value={theme} onValueChange={setTheme}>
-                  <SelectTrigger id="theme-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent className="bg-popover border border-border shadow-lg">
-                    <SelectItem value="personal-growth">Personal Growth</SelectItem>
-                    <SelectItem value="overcoming-challenges">Overcoming Challenges</SelectItem>
-                    <SelectItem value="discovery">Discovery & Learning</SelectItem>
-                    <SelectItem value="transformation">Transformation</SelectItem>
-                    <SelectItem value="collaboration">Teamwork & Collaboration</SelectItem>
-                    <SelectItem value="innovation">Innovation & Creativity</SelectItem>
-                    <SelectItem value="wisdom">Wisdom & Knowledge</SelectItem>
-                    <SelectItem value="resilience">Resilience & Perseverance</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="genre-select" className="text-sm font-medium text-foreground flex items-center gap-2">
-                  Genre
-                </Label>
-                <Select value={genre} onValueChange={setGenre}>
-                  <SelectTrigger id="genre-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent className="bg-popover border border-border shadow-lg">
-                    <SelectItem value="inspirational">Inspirational</SelectItem>
-                    <SelectItem value="educational">Educational</SelectItem>
-                    <SelectItem value="motivational">Motivational</SelectItem>
-                    <SelectItem value="adventure">Adventure</SelectItem>
-                    <SelectItem value="mystery">Mystery</SelectItem>
-                    <SelectItem value="sci-fi">Science Fiction</SelectItem>
-                    <SelectItem value="fantasy">Fantasy</SelectItem>
-                    <SelectItem value="biographical">Biographical</SelectItem>
-                    <SelectItem value="parable">Parable/Fable</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center bg-white/60 rounded-xl p-3 mt-2 mb-4 shadow-inner border border-primary/10">
+            <Button
+              className="w-full sm:w-auto bg-orange-400 font-semibold py-5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200"
+              onClick={generateStory}
+              disabled={disabled || isGenerating || isRegenerating}
+            >
+              {isGenerating ? (
+                <>
+                  <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                  Crafting your story...
+                </>
+              ) : (
+                <>
+                  <Wand2 className="h-5 w-5 mr-2" />
+                  Generate Story
+                </>
+              )}
+            </Button>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  className="bg-white text-black border border-black hover:bg-gray-200 rounded-full px-4 py-5 flex items-center justify-center"
+                  aria-label="Customize story settings"
+                  variant="outline"
+                >
+                  <Settings2 />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent>
+                <div className="relative bg-white/80 border border-primary/30 shadow-lg rounded-xl p-6 mt-2 mb-4 transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="bg-orange-400 p-3 rounded-lg shadow-lg">
+                      <Settings2 className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Story Customization</h3>
+                      <p className="text-sm font-normal">Tailor your story to perfection</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="focus-select" className="text-sm font-semibold text-foreground">
+                        Learning Focus
+                      </Label>
+                      <Select value={intention} onValueChange={setIntention}>
+                        <SelectTrigger id="focus-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
+                          <SelectValue placeholder="Select learning focus" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="knowledge">Knowledge Retention</SelectItem>
+                          <SelectItem value="understanding">Deep Understanding</SelectItem>
+                          <SelectItem value="application">Practical Application</SelectItem>
+                          <SelectItem value="creativity">Creative Thinking</SelectItem>
+                          <SelectItem value="memory">Memory Enhancement</SelectItem>
+                          <SelectItem value="inspiration">Inspiration & Motivation</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="tone-select" className="text-sm font-semibold text-foreground">
+                        Story Tone
+                      </Label>
+                      <Select value={tone} onValueChange={setTone}>
+                        <SelectTrigger id="tone-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
+                          <SelectValue placeholder="Select tone" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="engaging">Engaging & Memorable</SelectItem>
+                          <SelectItem value="professional">Professional</SelectItem>
+                          <SelectItem value="creative">Creative & Imaginative</SelectItem>
+                          <SelectItem value="academic">Academic & Formal</SelectItem>
+                          <SelectItem value="casual">Casual & Friendly</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="length-select" className="text-sm font-semibold text-foreground">
+                        Story Length
+                      </Label>
+                      <Select value={length} onValueChange={setLength}>
+                        <SelectTrigger id="length-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
+                          <SelectValue placeholder="Select length" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="short">Short & Concise</SelectItem>
+                          <SelectItem value="medium">Medium Length</SelectItem>
+                          <SelectItem value="long">Detailed & Comprehensive</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="time-period-select" className="text-sm font-semibold text-foreground">
+                        Time Period
+                      </Label>
+                      <Select value={timePeriod} onValueChange={setTimePeriod}>
+                        <SelectTrigger id="time-period-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
+                          <SelectValue placeholder="Select time period" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="futuristic">Futuristic</SelectItem>
+                          <SelectItem value="modern-day">Modern Day</SelectItem>
+                          <SelectItem value="medieval-times">Medieval Time</SelectItem>
+                          <SelectItem value="mythological">Mythological</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="theme-select" className="text-sm font-medium text-foreground flex items-center gap-2">
+                        Theme
+                      </Label>
+                      <Select value={theme} onValueChange={setTheme}>
+                        <SelectTrigger id="theme-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent className="bg-popover border border-border shadow-lg">
+                          <SelectItem value="personal-growth">Personal Growth</SelectItem>
+                          <SelectItem value="overcoming-challenges">Overcoming Challenges</SelectItem>
+                          <SelectItem value="discovery">Discovery & Learning</SelectItem>
+                          <SelectItem value="transformation">Transformation</SelectItem>
+                          <SelectItem value="collaboration">Teamwork & Collaboration</SelectItem>
+                          <SelectItem value="innovation">Innovation & Creativity</SelectItem>
+                          <SelectItem value="wisdom">Wisdom & Knowledge</SelectItem>
+                          <SelectItem value="resilience">Resilience & Perseverance</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="genre-select" className="text-sm font-medium text-foreground flex items-center gap-2">
+                        Genre
+                      </Label>
+                      <Select value={genre} onValueChange={setGenre}>
+                        <SelectTrigger id="genre-select" className="w-full py-6 bg-gray-100 border-primary/40 text-foreground shadow-md focus:ring-2 focus:ring-primary">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent className="bg-popover border border-border shadow-lg">
+                          <SelectItem value="inspirational">Inspirational</SelectItem>
+                          <SelectItem value="educational">Educational</SelectItem>
+                          <SelectItem value="motivational">Motivational</SelectItem>
+                          <SelectItem value="adventure">Adventure</SelectItem>
+                          <SelectItem value="mystery">Mystery</SelectItem>
+                          <SelectItem value="sci-fi">Science Fiction</SelectItem>
+                          <SelectItem value="fantasy">Fantasy</SelectItem>
+                          <SelectItem value="biographical">Biographical</SelectItem>
+                          <SelectItem value="parable">Parable/Fable</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
-
-          <Button
-            className="w-full sm:w-auto bg-orange-400 font-semibold py-5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200"
-            onClick={generateStory}
-            disabled={disabled || isGenerating || isRegenerating}
-          >
-            {isGenerating ? (
-              <>
-                <Loader2 className="h-5 w-5 mr-2 animate-spin" />
-                Crafting your story...
-              </>
-            ) : (
-              <>
-                <Wand2 className="h-5 w-5 mr-2" />
-                Generate Story
-              </>
-            )}
-          </Button>
         </CardContent>
       </Card>
       {/* Output Section */}
