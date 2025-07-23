@@ -205,7 +205,7 @@ export function StoryGenerator() {
               <PopoverContent>
                 <div className="relative bg-white/80 border border-primary/30 shadow-lg rounded-xl p-6 mt-2 mb-4 transition-all">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-orange-400 p-3 rounded-lg shadow-lg">
+                    <div className="bg-orange-500 p-3 rounded-lg shadow-lg">
                       <Settings2 className="h-6 w-6 text-white" />
                     </div>
                     <div>
