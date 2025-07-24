@@ -16,8 +16,7 @@ export const HeroSection = () => {
         </h1>
         
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Turn dry notes and information into engaging, memorable stories that stick in your mind. 
-          Perfect for students, writers, and knowledge workers who want to remember better.
+          Turn dry notes and information into engaging, memorable stories that stick in your mind.
         </p>
       </div>
     </section>
