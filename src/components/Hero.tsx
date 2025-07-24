@@ -1,6 +1,7 @@
 import { Feather } from 'lucide-react';
 
 export const HeroSection = () => {
+  const features = ["AI-Powered", "Fast & Easy", "Customizable"];
   return (
     <section className="min-h-screen flex items-center text-center py-10 px-6">
       <div className="max-w-4xl mx-auto">
@@ -18,6 +19,13 @@ export const HeroSection = () => {
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           Turn dry notes and information into engaging, memorable stories that stick in your mind.
         </p>
+        
+        {/* Feature Highlights */}
+        <div className="mt-4 flex flex-wrap justify-center gap-3 text-sm mb-8">
+          {features.map((feature, index) => (
+            <span key={index} className="bg-gray-200 font-semibold px-5 py-2 rounded-full">{feature}</span>
+          ))}
+        </div>
       </div>
     </section>
   );
