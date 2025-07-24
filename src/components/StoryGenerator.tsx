@@ -175,7 +175,7 @@ export function StoryGenerator() {
           {/* Story Settings Section */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center bg-white/60 rounded-xl p-3 mt-2 mb-4 shadow-inner border border-primary/10">
             <Button
-              className="w-full sm:w-auto bg-orange-500 font-semibold py-5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200"
+              className="w-full cursor-pointer sm:w-auto bg-orange-500 font-semibold py-5 px-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-600 transition-all duration-200"
               onClick={generateStory}
               disabled={disabled || isGenerating || isRegenerating}
             >
@@ -194,7 +194,7 @@ export function StoryGenerator() {
             <Popover>
               <PopoverTrigger asChild>
                 <Button
-                  className="bg-white text-black border border-black hover:bg-gray-200 rounded-full px-4 py-5 flex items-center justify-center"
+                  className="bg-white text-black border border-black cursor-pointer hover:bg-gray-200 rounded-full px-4 py-5 flex items-center justify-center"
                   aria-label="Customize story settings"
                   variant="outline"
                 >
