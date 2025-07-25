@@ -1,6 +1,10 @@
 import { Feather } from 'lucide-react';
 
+import { TypingAnimation } from './TypingAnimation';
+
 export const HeroSection = () => {
+  // Words for typing animation
+  const words = ['notes', 'summaries', 'thoughts', 'ideas', 'research', 'documents'];
   const features = ["AI-Powered", "Fast & Easy", "Customizable"];
   return (
     <section className="min-h-screen flex items-center text-center py-10 px-6">
@@ -10,7 +14,10 @@ export const HeroSection = () => {
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-shadow">
-          Transform your notes
+          Transform your <TypingAnimation 
+            words={words}
+            className="text-transparent bg-clip-text bg-orange-400 font-extrabold"
+          />
           <span className="block text-5xl md:text-6xl">into&nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 animate-gradient font-extrabold text-5xl md:text-6xl mt-2">
               memorable stories
