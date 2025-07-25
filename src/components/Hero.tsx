@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Feather, Wand2 } from 'lucide-react';
+import { Feather, Settings2, Sparkles, Wand2, Zap } from 'lucide-react';
 
 import { TypingAnimation } from './TypingAnimation';
 
@@ -9,7 +9,12 @@ import { Button } from './ui/button';
 export const HeroSection = () => {
   // Words for typing animation
   const words = ['notes', 'summaries', 'thoughts', 'ideas', 'research', 'documents'];
-  const features = ["AI-Powered", "Fast & Easy", "Customizable"];
+  // Features
+  const features = [
+    {name: "AI-Powered", icon: Sparkles},
+    {name: "Fast & Easy", icon: Zap},
+    {name: "Customizable", icon: Settings2},
+  ];
   return (
     <section className="min-h-screen flex items-center text-center py-10 px-6">
       <div className="max-w-4xl mx-auto">
@@ -36,7 +41,12 @@ export const HeroSection = () => {
         {/* Feature Highlights */}
         <div className="mt-4 flex flex-wrap justify-center gap-3 text-sm mb-8">
           {features.map((feature, index) => (
-            <span key={index} className="bg-gray-200 font-semibold px-5 py-2 rounded-full">{feature}</span>
+            <span key={index} className="flex items-center group bg-gray-200 hover:bg-orange-500 hover:text-white font-semibold px-5 py-2 rounded-full transition-all">
+              <span className="w-7 h-7 flex items-center justify-center mr-2 text-orange-500 group-hover:text-white">
+                <feature.icon className="h-5 w-5"/>
+              </span>
+              <span>{feature.name}</span>
+            </span>
           ))}
         </div>
         {/* CTA Button */}
