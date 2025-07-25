@@ -10,9 +10,11 @@ export const HeroSection = () => {
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-shadow">
-          Transform your notes into
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 animate-gradient font-extrabold text-5xl md:text-6xl block mt-2">
-            memorable stories
+          Transform your notes
+          <span className="block text-5xl md:text-6xl">into&nbsp;
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 animate-gradient font-extrabold text-5xl md:text-6xl mt-2">
+              memorable stories
+            </span>
           </span>
         </h1>
         
