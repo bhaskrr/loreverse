@@ -1,6 +1,10 @@
-import { Feather } from 'lucide-react';
+import Link from 'next/link';
+
+import { Feather, Wand2 } from 'lucide-react';
 
 import { TypingAnimation } from './TypingAnimation';
+
+import { Button } from './ui/button';
 
 export const HeroSection = () => {
   // Words for typing animation
@@ -34,6 +38,15 @@ export const HeroSection = () => {
           {features.map((feature, index) => (
             <span key={index} className="bg-gray-200 font-semibold px-5 py-2 rounded-full">{feature}</span>
           ))}
+        </div>
+        {/* CTA Button */}
+        <div className="flex justify-center gap-4">
+          <Link href="#generator">
+            <Button size="lg" className="group bg-orange-500 py-6 text-lg font-semibold hover:bg-orange-600 hover:-translate-y-1 transition-transform">
+              <Wand2 className="h-5 w-5 group-hover:rotate-10 transition-transform" />
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
