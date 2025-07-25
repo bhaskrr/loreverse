@@ -41,7 +41,7 @@ export const HeroSection = () => {
         {/* Feature Highlights */}
         <div className="mt-4 flex flex-wrap justify-center gap-3 text-sm mb-8">
           {features.map((feature, index) => (
-            <span key={index} className="flex items-center group bg-gray-200 hover:bg-orange-500 hover:text-white font-semibold px-5 py-2 rounded-full transition-all">
+            <span key={index} className="flex items-center group bg-gray-200 hover:bg-orange-500 hover:text-white hover:scale-[1.05] font-semibold px-5 py-2 rounded-full transition-all">
               <span className="w-7 h-7 flex items-center justify-center mr-2 text-orange-500 group-hover:text-white">
                 <feature.icon className="h-5 w-5"/>
               </span>
