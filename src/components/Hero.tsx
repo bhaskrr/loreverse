@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { motion } from "motion/react";
+
 import { Feather, Settings2, Sparkles, Wand2, Zap } from 'lucide-react';
 
 import { TypingAnimation } from './TypingAnimation';
@@ -41,12 +43,38 @@ export const HeroSection = () => {
         {/* Feature Highlights */}
         <div className="mt-4 flex flex-wrap justify-center gap-3 text-sm mb-8">
           {features.map((feature, index) => (
-            <span key={index} className="flex items-center group bg-gray-200 hover:bg-orange-500 hover:text-white hover:scale-[1.05] font-semibold px-5 py-2 rounded-full transition-all">
-              <span className="w-7 h-7 flex items-center justify-center mr-2 text-orange-500 group-hover:text-white">
-                <feature.icon className="h-5 w-5"/>
+            <motion.div
+              key={index}
+              initial={{
+                scale: 0.8,
+                y: 40,
+                opacity: 0,
+                rotate: index % 2 === 0 ? -6 : 6,
+              }}
+              animate={{
+                scale: 1,
+                y: 0,
+                opacity: 1,
+                rotate: index % 2 === 0 ? -2 : 2,
+              }}
+              transition={{
+                type: false,
+                delay: 0.2 + index * 0.2,
+              }}
+              className="relative flex flex-col items-center justify-center bg-yellow-100 border-2 border-yellow-300 rounded-lg w-32 min-h-[80px] shadow-lg transition-transform hover:scale-105 hover:-rotate-2"
+              style={{
+                zIndex: 1,
+              }}
+            >
+              {/* Icon */}
+              <span className="w-7 h-7 flex items-center justify-center mb-1 text-orange-600">
+                <feature.icon className="h-5 w-5" />
               </span>
-              <span>{feature.name}</span>
-            </span>
+              {/* Feature text */}
+              <span className="text-sm font-semibold text-yellow-900 text-center px-2">
+                {feature.name}
+              </span>
+            </motion.div>
           ))}
         </div>
         {/* CTA Button */}
