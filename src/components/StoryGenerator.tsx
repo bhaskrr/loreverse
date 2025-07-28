@@ -136,7 +136,7 @@ export function StoryGenerator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-6 space-y-8">
+    <div className="min-h-screen max-w-4xl mx-auto px-6 space-y-8">
       {/* Tips Section */}
       <Card className="bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-950/10 dark:to-indigo-950/10 border-blue-200/50 dark:border-blue-800/30">
         <CardContent>
