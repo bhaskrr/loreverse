@@ -19,25 +19,25 @@ export const Header = () => {
         </Link>
         <nav className="flex items-center gap-6 hidden md:flex">
           <Link
-            href="#features"
+            href="/#features"
             className="hover:text-orange-600 transition-colors"
           >
             Features
           </Link>
           <Link
-            href="#howitworks"
+            href="/#howitworks"
             className="hover:text-orange-600 transition-colors"
           >
             How It Works
           </Link>
           <Link
-            href="#about"
+            href="/about"
             className="hover:text-orange-600 transition-colors"
           >
             About
           </Link>
           {/* Optional CTA */}
-          <Link href="#input">
+          <Link href="/#input">
             <Button
               size="lg"
               className="bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors"
