@@ -140,13 +140,13 @@ export function StoryGenerator() {
       id="input"
       className="min-h-screen max-w-4xl mx-auto px-6 flex flex-col items-center justify-center space-y-8">
       {/* Tips Section */}
-      <Card className="bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-950/10 dark:to-indigo-950/10 border-blue-200/50 dark:border-blue-800/30">
+      <Card className="w-full bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-950/10 dark:to-indigo-950/10 border-blue-200/50 dark:border-blue-800/30">
         <CardContent>
               <h3 className="font-medium text-blue-900 dark:text-blue-100 text-sm">💡 Perfect for study notes, meeting minutes, research findings, or any thoughts you want to remember</h3>
         </CardContent>
       </Card>
       {/* Input Section */}
-      <Card className="story-gradient border-border/50 shadow-lg">
+      <Card className="w-full story-gradient border-border/50 shadow-lg">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground">
             <Wand2 className="h-5 w-5 text-orange-400" />
