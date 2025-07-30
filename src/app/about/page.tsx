@@ -102,7 +102,7 @@ export default function AboutPage() {
               return (
                 <Card
                   key={user.title}
-                  className="shadow-lg hover:border-orange-500 hover:shadow-xl hover:-translate-y-1 transition-all"
+                  className="shadow-lg group hover:border-orange-500 hover:shadow-xl hover:-translate-y-1 transition-all"
                 >
                   <CardHeader className="flex gap-2 justify-center items-center text-xl">
                     <div className="p-2 rounded-xl group-hover:bg-orange-500 transition-colors duration-300">
