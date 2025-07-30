@@ -130,9 +130,9 @@ export default function AboutPage() {
             Jump into the story generator and see what your imagination and AI
             can create together.
           </p>
-          <Button size="lg">
-            <Link href="/#input">Try It Now</Link>
-          </Button>
+          <Link href="/#input">
+            <Button size="lg">Try It Now</Button>
+          </Link>
         </div>
       </section>
     </div>
