@@ -105,7 +105,9 @@ export default function AboutPage() {
                   className="shadow-lg hover:border-orange-500 hover:shadow-xl hover:-translate-y-1 transition-all"
                 >
                   <CardHeader className="flex gap-2 justify-center items-center text-xl">
-                    <IconComponent className="h-6 w-6 text-orange-500 group-hover:text-white" />
+                    <div className="p-2 rounded-xl group-hover:bg-orange-500 transition-colors duration-300">
+                      <IconComponent className="h-6 w-6 text-orange-500 group-hover:text-white" />
+                    </div>
                     {user.title}
                   </CardHeader>
                   <CardContent>
