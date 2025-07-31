@@ -104,14 +104,16 @@ export default function AboutPage() {
                   key={user.title}
                   className="shadow-lg group hover:border-orange-500 hover:shadow-xl hover:-translate-y-1 transition-all"
                 >
-                  <CardHeader className="flex gap-2 justify-center items-center text-xl">
-                    <div className="p-2 rounded-xl group-hover:bg-orange-500 transition-colors duration-300">
+                  <CardHeader className="flex flex-col gap-3 text-xl">
+                    <div className="p-2 rounded-xl group-hover:bg-orange-500 group-hover:translate-y-1 transition-colors duration-300">
                       <IconComponent className="h-6 w-6 text-orange-500 group-hover:text-white" />
                     </div>
-                    {user.title}
+                    <div className="text-left">
+                      {user.title}
+                    </div>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription>{user.description}</CardDescription>
+                    <CardDescription className="text-left">{user.description}</CardDescription>
                   </CardContent>
                 </Card>
               );
