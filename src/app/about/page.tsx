@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { GraduationCap, PenLine, Drama } from "lucide-react";
+import { GraduationCap, PenLine, Drama, Rocket, Telescope } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -12,6 +12,7 @@ import {
 // Objectives and Users array
 const objectives = [
   {
+    icon: Rocket,
     title: "Our Mission",
     description:
       "We believe everyone has a story to tell. Our goal is to eliminate \
@@ -19,6 +20,7 @@ const objectives = [
       their ideas through rich, engaging narratives.",
   },
   {
+    icon: Telescope,
     title: "Our Vision",
     description:
       "To become the go-to platform for AI-powered creativity — helping \
@@ -67,24 +69,30 @@ export default function AboutPage() {
 
       {/* Mission & Vision */}
       <section className="py-20 bg-muted/10">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
-          {objectives.map((objective) => (
-            <Card
-              key={objective.title}
-              className="shadow-lg hover:border-orange-500 hover:shadow-xl hover:-translate-y-2 transition-all"
-            >
-              <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl md:text-4xl">
-                  {objective.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-md md:text-lg">
-                  {objective.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-10 px-4">
+          {objectives.map((objective) => {
+            const IconComponent = objective.icon;
+            return (
+              <Card
+                key={objective.title}
+                className="relative group bg-background border border-muted rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-300 hover:border-orange-500 hover:-translate-y-2 hover:bg-orange-50/20 backdrop-blur-md"
+              >
+                <CardHeader className="text-center">
+                  <CardTitle className="flex items-center justify-center gap-3 text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
+                    <span className="flex items-center justify-center rounded-full bg-orange-100 p-2 group-hover:bg-orange-500 transition-colors">
+                      <IconComponent className="h-6 w-6 text-orange-500 group-hover:text-white transition-colors" />
+                    </span>
+                    {objective.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-muted-foreground text-base sm:text-lg text-center mt-2 leading-relaxed">
+                    {objective.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </section>
 
