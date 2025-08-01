@@ -110,7 +110,7 @@ export default function AboutPage() {
               return (
                 <Card
                   key={user.title}
-                  className="relative group bg-background border border-muted rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-300 hover:border-orange-500 hover:-translate-y-2 hover:bg-orange-50/20 backdrop-blur-md"
+                  className="relative group bg-background border border-muted rounded-2xl py-4 shadow-sm hover:shadow-2xl transition-all duration-300 hover:border-orange-500 hover:-translate-y-2 hover:bg-orange-50/20 backdrop-blur-md"
                 >
                   <CardHeader className="flex flex-col gap-3 text-xl">
                     <div className="p-2 rounded-xl group-hover:bg-orange-500 group-hover:translate-y-1 transition-colors duration-300">
