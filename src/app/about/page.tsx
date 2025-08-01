@@ -79,7 +79,7 @@ export default function AboutPage() {
               >
                 <CardHeader className="text-center">
                   <CardTitle className="flex items-center justify-center gap-3 text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
-                    <span className="flex items-center justify-center rounded-full bg-orange-100 p-2 group-hover:bg-orange-500 transition-colors">
+                    <span className="flex items-center justify-center rounded-lg bg-orange-100 p-2 group-hover:bg-orange-500 transition-colors">
                       <IconComponent className="h-6 w-6 text-orange-500 group-hover:text-white transition-colors" />
                     </span>
                     {objective.title}
