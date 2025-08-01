@@ -116,7 +116,7 @@ export default function AboutPage() {
                     <div className="p-2 rounded-xl group-hover:bg-orange-500 group-hover:translate-y-1 transition-colors duration-300">
                       <IconComponent className="h-6 w-6 text-orange-500 group-hover:text-white" />
                     </div>
-                    <div className="text-left">
+                    <div className="text-left font-semibold">
                       {user.title}
                     </div>
                   </CardHeader>
