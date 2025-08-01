@@ -141,7 +141,7 @@ export default function AboutPage() {
             can create together.
           </p>
           <Link href="/#input">
-            <Button size="lg" className="font-semibold bg-orange-500 hover:bg-orange-600 hover:-translate-y-2 transition-all duration-500">
+            <Button size="lg" className="text-md md:text-lg font-semibold bg-orange-500 hover:bg-orange-600 hover:-translate-y-2 transition-all duration-500">
               Try It Now
             </Button>
           </Link>
