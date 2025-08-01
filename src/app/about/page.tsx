@@ -75,7 +75,7 @@ export default function AboutPage() {
             return (
               <Card
                 key={objective.title}
-                className="relative group bg-background border border-muted rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-300 hover:border-orange-500 hover:-translate-y-2 hover:bg-orange-50/20 backdrop-blur-md"
+                className="relative group bg-background border border-muted rounded-2xl p-6 shadow-sm cursor-pointer hover:shadow-2xl transition-all duration-300 hover:border-orange-500 hover:-translate-y-2 hover:bg-orange-50/20 backdrop-blur-md"
               >
                 <CardHeader className="text-center">
                   <CardTitle className="flex items-center justify-center gap-3 text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
@@ -110,7 +110,7 @@ export default function AboutPage() {
               return (
                 <Card
                   key={user.title}
-                  className="relative group bg-background border border-muted rounded-2xl py-4 shadow-sm hover:shadow-2xl transition-all duration-300 hover:border-orange-500 hover:-translate-y-2 hover:bg-orange-50/20 backdrop-blur-md"
+                  className="relative group bg-background border border-muted rounded-2xl py-4 shadow-sm cursor-pointer hover:shadow-2xl transition-all duration-300 hover:border-orange-500 hover:-translate-y-2 hover:bg-orange-50/20 backdrop-blur-md"
                 >
                   <CardHeader className="flex flex-col gap-3 text-xl">
                     <div className="p-2 rounded-xl group-hover:bg-orange-500 group-hover:translate-y-1 transition-colors duration-300">
@@ -141,7 +141,7 @@ export default function AboutPage() {
             can create together.
           </p>
           <Link href="/#input">
-            <Button size="lg" className="text-md md:text-lg font-semibold bg-orange-500 hover:bg-orange-600 hover:-translate-y-2 transition-all duration-500">
+            <Button size="lg" className="text-md md:text-lg font-semibold cursor-pointer bg-orange-500 hover:bg-orange-600 hover:-translate-y-2 transition-all duration-500">
               Try It Now
             </Button>
           </Link>
