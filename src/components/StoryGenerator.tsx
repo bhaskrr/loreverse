@@ -148,7 +148,7 @@ export function StoryGenerator() {
       {/* Input Section */}
       <Card className="w-full story-gradient border-border/50 shadow-lg">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-foreground">
+          <CardTitle className="flex items-center gap-2 text-foreground text-lg md:text-xl">
             <Wand2 className="h-5 w-5 text-orange-400" />
             Your Notes
           </CardTitle>
