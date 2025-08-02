@@ -79,7 +79,7 @@ export const HeroSection = () => {
         </div>
         {/* CTA Button */}
         <div className="flex justify-center gap-4">
-          <Link href="#generator">
+          <Link href="#input">
             <Button size="lg" className="group bg-orange-500 py-6 text-lg font-semibold hover:bg-orange-600 hover:-translate-y-1 hover:shadow-lg transition-transform">
               <Wand2 className="h-5 w-5 group-hover:rotate-10 transition-transform" />
               Get Started
