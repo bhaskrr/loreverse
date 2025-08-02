@@ -332,7 +332,7 @@ export function StoryGenerator() {
       </Card>
       {/* Output Section */}
       {story && (
-        <Card className="story-gradient border-border/50 shadow-lg animate-fade-in">
+        <Card className="story-gradient w-full border-border/50 shadow-lg animate-fade-in">
           <CardHeader>
               <CardTitle>
                 <div className="flex gap-2">
