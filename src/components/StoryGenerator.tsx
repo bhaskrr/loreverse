@@ -1,6 +1,6 @@
 'use client';
 
-import { Copy, Feather, Loader2, RefreshCw, Settings2, Wand2 } from "lucide-react";
+import { Copy, Feather, Loader2, RefreshCw, Settings2, Wand, Wand2 } from "lucide-react";
 
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
@@ -188,7 +188,7 @@ export function StoryGenerator() {
                 </>
               ) : (
                 <>
-                  <Wand2 className="h-5 w-5 mr-2" />
+                  <Wand className="h-5 w-5 mr-2" />
                   Generate Story
                 </>
               )}
