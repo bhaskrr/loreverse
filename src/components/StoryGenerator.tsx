@@ -174,6 +174,18 @@ export function StoryGenerator() {
     <div
       id="input"
       className="min-h-screen max-w-4xl mx-auto px-6 flex flex-col items-center justify-center space-y-8">
+        {/* Main Heading */}
+        <div className="text-center">
+          <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
+            Let the magic begin
+          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+            Unleash Your Story
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+            Craft beautiful stories from your imagination with AI.
+          </p>
+        </div>
       {/* Tips Section */}
       <Card className="w-full bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-950/10 dark:to-indigo-950/10 border-blue-200/50 dark:border-blue-800/30">
         <CardContent>
