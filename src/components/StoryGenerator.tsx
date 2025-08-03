@@ -11,6 +11,35 @@ import { Label } from "./ui/label";
 import { toast } from "sonner";
 import { useState } from "react";
 
+const EXAMPLES = [
+  {
+    label: "Biology Study Notes",
+    text: `- Photosynthesis converts sunlight into chemical energy in plants.
+    - Chlorophyll absorbs light energy.
+    - Water and carbon dioxide are converted into glucose and oxygen.
+    - Occurs in chloroplasts of plant cells.`
+  },
+  {
+    label: "Meeting Minutes",
+    text: `- Discussed Q3 marketing strategy.
+    - Decided to focus on social media campaigns.
+    - Assigned tasks to team members.
+    - Next meeting scheduled for Friday.`
+  },
+  {
+    label: "Research Summary",
+    text: `- AI can generate creative stories from structured notes.
+    - User input and customization improve output quality.
+    - Applications include education, entertainment, and productivity.`
+  },
+  {
+    label: "Random Thoughts",
+    text: `- What if trees could talk?
+    - How would history change if people could fly?
+    - Why do we dream in stories?`
+  },
+];
+
 export function StoryGenerator() {
     // State variables
     const [notes, setNotes] = useState("");
@@ -25,6 +54,12 @@ export function StoryGenerator() {
     const [isRegenerating, setIsRegenerating] = useState(false);
     const [notesError, setNotesError] = useState("");
     const [disabled, setDisabled] = useState(true);
+
+    const handleExampleClick = (exampleText: string) => {
+      setNotes(exampleText);
+      setNotesError("");
+      setDisabled(false);
+    };
 
     const handleInputChange = (e) => {
       const input = e.target.value;
@@ -145,6 +180,30 @@ export function StoryGenerator() {
               <h3 className="font-medium text-blue-900 dark:text-blue-100 text-sm">💡 Perfect for study notes, meeting minutes, research findings, or any thoughts you want to remember</h3>
         </CardContent>
       </Card>
+      {/* Example Notes Section */}
+      <Card className="w-full bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-100 shadow-md rounded-xl mb-4">
+        <CardContent>
+          <div className="flex flex-wrap items-center gap-2 md:gap-3">
+            <span className="text-sm font-semibold text-emerald-700 whitespace-nowrap">
+              🚀 Try an example:
+            </span>
+            {EXAMPLES.map((ex) => (
+              <Button
+                key={ex.label}
+                size="sm"
+                variant="ghost"
+                className="rounded-full border border-emerald-300 text-emerald-800 bg-emerald-100 hover:bg-emerald-200 focus:ring-2 focus:ring-emerald-400 focus:outline-none transition-all text-xs px-4 py-1"
+                onClick={() => handleExampleClick(ex.text)}
+                tabIndex={0}
+                aria-label={`Insert example: ${ex.label}`}
+              >
+                {ex.label}
+              </Button>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Input Section */}
       <Card className="w-full story-gradient border-border/50 shadow-lg">
         <CardHeader>
