@@ -10,7 +10,7 @@ export async function generateStoryFromNotes(notes: string, tone: string, length
             'You transform raw notes into engaging and memorable narratives that are easy to read and remember.',
         prompt: `Turn the following notes into a ${length}-length story in a ${tone}-tone and ${genre}-genre in simple language. Set the story in a ${setting} setting.
                 Make the story suitable for ${goal}. Focus on helping the reader understand the concept clearly through narrative in a ${theme} theme.
-                Keep it engaging and vivid:\n\n${notes}`,
+                Keep it engaging, concise and vivid:\n\n${notes}`,
     });
 
     // Narrow the type of result.response.body before accessing its properties
