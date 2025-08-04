@@ -67,7 +67,7 @@ export const HowItWorks = () => {
   return (
     <section
       id="howitworks"
-      className="min-h-screen relative flex flex-col justify-center items-center px-4 sm:px-6 lg:px-16 overflow-hidden text-foreground"
+      className="min-h-screen flex flex-col justify-center items-center px-4 pt-6 sm:px-6 lg:px-16 overflow-hidden text-foreground"
     >
       {/* Heading Section */}
       <div className="relative text-center max-w-4xl mx-auto">
