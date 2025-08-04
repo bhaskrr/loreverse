@@ -29,7 +29,7 @@ export const HeroSection = () => {
             words={words}
             className="text-transparent bg-clip-text bg-orange-400 font-extrabold"
           />
-          <span className="block text-4xl md:text-5xl">into&nbsp;
+          <span className="block text-4xl md:text-6xl">into&nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 animate-gradient font-extrabold text-4xl md:text-6xl mt-2">
               memorable stories
             </span>
