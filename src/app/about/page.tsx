@@ -86,7 +86,7 @@ export default function AboutPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-muted-foreground text-base sm:text-lg text-center mt-2 leading-relaxed">
+                  <CardDescription className="text-muted-foreground text-base text-md md:text-lg text-center mt-2 leading-relaxed">
                     {objective.description}
                   </CardDescription>
                 </CardContent>
@@ -100,7 +100,7 @@ export default function AboutPage() {
       <section className="py-20 text-center">
         <div className="container max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-6">Who It’s For</h2>
-          <p className="text-muted-foreground text-lg mb-12">
+          <p className="text-muted-foreground text-md md:text-lg mb-12">
             Whether you’re a writer, educator, hobbyist, or just someone who
             loves stories — we’ve built this tool for you.
           </p>
@@ -136,7 +136,7 @@ export default function AboutPage() {
           <h2 className="text-4xl font-bold mb-6">
             Ready to Start Your Story?
           </h2>
-          <p className="text-muted-foreground text-lg mb-8">
+          <p className="text-muted-foreground text-md md:text-lg mb-8">
             Jump into the story generator and see what your imagination and AI
             can create together.
           </p>
