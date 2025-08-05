@@ -91,7 +91,7 @@ export const Features = () => {
                     </div>
                     <Badge
                       variant="secondary"
-                      className="bg-secondary/50 hover:bg-secondary/80 transition-colors"
+                      className="bg-secondary hover:bg-secondary/80 transition-colors"
                     >
                       {feature.badge}
                     </Badge>
